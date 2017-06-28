@@ -60,6 +60,21 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.20.0/minik
 ``` bash
 minikube start --vm-driver=kvm
 ```
-kubectl cluster-info
-kubectl config view
+
+### Test your setup
+``` bash
+kubectl cluster-info #should return Kubernetes master is running at https://<ip>:8443
+kubectl config view #should return a list of configurations
+minikube dashboard #should open a browser and go to the dashboard
+```
+
+## Using Minikube
+### To open the dashboard
+``` bash
 minikube dashboard
+```
+
+### To SSH into the Minikube VM
+``` bash
+minikube ssh #minikube ssh -v 7 to show the full command
+```
